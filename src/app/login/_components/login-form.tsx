@@ -42,7 +42,7 @@ export function LoginForm() {
           <TextInput
             name="password"
             type="password"
-            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
+            placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
             onChange={formik.handleChange}
             defaultValue={formik.values.password}
             errorMessage={formik.errors.password}
