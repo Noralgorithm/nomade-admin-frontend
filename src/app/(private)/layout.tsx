@@ -1,3 +1,4 @@
+import { Header } from "./_components/header";
 import { Sidebar } from "./_components/sidebar";
 
 export default function PrivateLayout({
@@ -8,7 +9,10 @@ export default function PrivateLayout({
   return (
     <div className="w-full min-h-screen flex">
       <Sidebar />
-      {children}
+      <div className="w-full">
+        <Header />
+        {children}
+      </div>
     </div>
   );
 }

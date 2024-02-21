@@ -1,3 +1,3 @@
 export default function DashboardPage() {
-  return <h1>Dashboard page!</h1>;
+  return <h1 className="ml-8">Dashboard page!</h1>;
 }
