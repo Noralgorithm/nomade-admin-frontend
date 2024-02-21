@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import { ToastContainer } from "react-toastify";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import "react-toastify/dist/ReactToastify.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Diostatón",
@@ -16,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
-        <ToastContainer />
+        <AppRouterCacheProvider>
+          {children}
+          <ToastContainer />
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

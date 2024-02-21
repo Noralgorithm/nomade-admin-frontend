@@ -1,3 +1,3 @@
 import type { Person } from "./person.type";
 
-export interface Client extends Person {}
+export interface Customer extends Person {}

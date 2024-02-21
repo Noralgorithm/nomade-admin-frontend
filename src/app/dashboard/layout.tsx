@@ -9,7 +9,7 @@ export default function PrivateLayout({
   return (
     <div className="w-full min-h-screen flex">
       <Sidebar />
-      <div className="w-full">
+      <div className="w-full flex flex-col gap-16">
         <Header />
         {children}
       </div>

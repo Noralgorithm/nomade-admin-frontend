@@ -13,8 +13,9 @@ import {
   TiGroup,
   TiTag,
   TiTags,
-  TiSocialSkype,
+  TiPlane,
 } from "react-icons/ti";
+import Link from "next/link";
 
 const ICONS_SIZE = 25;
 
@@ -27,14 +28,24 @@ export function Sidebar() {
       collapsed={collapsed}
       onMouseEnter={() => setCollapsed(false)}
       onMouseLeave={() => setCollapsed(true)}
-      className="text-sky-600 font-semibold"
+      className="text-sky-600 font-semibold fixed"
     >
-      <div className="pl-5 mt-5">
-        <TiSocialSkype size={40} />
+      <div className="pl-[17px] mt-5">
+        <TiPlane size={40} />
       </div>
       <Menu className="mt-5">
-        <MenuItem icon={<TiThLarge size={ICONS_SIZE} />}>Panel</MenuItem>
-        <MenuItem icon={<TiGroup size={ICONS_SIZE} />}>Clientes</MenuItem>
+        <MenuItem
+          component={<Link href="/dashboard" />}
+          icon={<TiThLarge size={ICONS_SIZE} />}
+        >
+          Panel
+        </MenuItem>
+        <MenuItem
+          component={<Link href="/dashboard/customers" />}
+          icon={<TiGroup size={ICONS_SIZE} />}
+        >
+          Clientes
+        </MenuItem>
         <MenuItem icon={<TiUser size={ICONS_SIZE} />}>Empleados</MenuItem>
         <SubMenu label="Servicios" icon={<TiTag size={ICONS_SIZE} />}>
           <MenuItem>Hotel por noches</MenuItem>
