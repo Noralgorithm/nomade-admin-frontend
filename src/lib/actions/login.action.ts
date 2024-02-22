@@ -1,7 +1,7 @@
 "use server";
 
-import { LoginPayload } from "@/types/login-payload.type";
-import { validateLoginPayload } from "../validations/login-payload";
+import { LoginPayload } from "@/types/payloads/login-payload.type";
+import { validateLoginPayload } from "../validations/login-payload.validation";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 

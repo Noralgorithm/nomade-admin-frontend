@@ -1,6 +1,6 @@
 "use client";
 
-import { Customer } from "@/types/customer.type";
+import { Customer } from "@/types/entities/customer.type";
 import { Paper } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";

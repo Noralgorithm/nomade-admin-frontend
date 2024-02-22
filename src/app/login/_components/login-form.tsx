@@ -1,8 +1,8 @@
-import { LoginPayloadSchema } from "@/lib/validations/login-payload";
+import { LoginPayloadSchema } from "@/lib/validations/login-payload.validation";
 import { Button, TextInput } from "@tremor/react";
 import { useFormik } from "formik";
 import { login } from "@/lib/actions/login.action";
-import { LoginPayload } from "@/types/login-payload.type";
+import { LoginPayload } from "@/types/payloads/login-payload.type";
 import { toast } from "react-toastify";
 
 export function LoginForm() {
@@ -21,14 +21,18 @@ export function LoginForm() {
   });
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={formik.handleSubmit}>
+    <form
+      className="flex flex-col gap-5"
+      onSubmit={formik.handleSubmit}
+      onChange={formik.handleChange}
+      onBlur={formik.handleBlur}
+    >
       <div>
         <label className="font-semibold text-sm">
           Correo Electrónico
           <TextInput
             name="email"
             placeholder="john.doe@gmail.com"
-            onChange={formik.handleChange}
             defaultValue={formik.values.email}
             errorMessage={formik.errors.email}
             error={!!formik.errors.email && formik.touched.email}
@@ -43,7 +47,6 @@ export function LoginForm() {
             name="password"
             type="password"
             placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
-            onChange={formik.handleChange}
             defaultValue={formik.values.password}
             errorMessage={formik.errors.password}
             error={!!formik.errors.password && formik.touched.password}

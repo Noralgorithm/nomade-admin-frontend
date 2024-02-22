@@ -1,4 +1,4 @@
-import { Customer } from "@/types/customer.type";
+import { Customer } from "@/types/entities/customer.type";
 import { CustomersTableView } from "./customers-table-view";
 
 export async function fetchCustomers(page: number) {

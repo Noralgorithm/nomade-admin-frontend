@@ -28,9 +28,9 @@ export function Sidebar() {
       collapsed={collapsed}
       onMouseEnter={() => setCollapsed(false)}
       onMouseLeave={() => setCollapsed(true)}
-      className="text-sky-600 font-semibold fixed"
+      className="font-semibold fixed"
     >
-      <div className="pl-[17px] mt-5">
+      <div className="pl-[17px] mt-5 text-sky-600 ">
         <TiPlane size={40} />
       </div>
       <Menu className="mt-5">
