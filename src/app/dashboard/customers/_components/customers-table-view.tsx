@@ -4,7 +4,6 @@ import { Customer } from "@/types/entities/customer.type";
 import { Paper } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 
 interface Props {
   customers: Customer[];
@@ -42,6 +41,9 @@ export function CustomersTableView({ customers }: Props) {
         rows={customers}
         rowCount={15}
         pagination
+        onRowClick={(obj: { row: Customer }) => {
+          console.log(obj.row);
+        }}
         pageSizeOptions={[8]}
         initialState={{
           pagination: {

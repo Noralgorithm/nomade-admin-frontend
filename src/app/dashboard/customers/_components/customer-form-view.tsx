@@ -1,6 +1,6 @@
 "use client";
 
-import { CreateCustomerPayload } from "@/types/payloads/create-customer-payload";
+import { CreateCustomerPayload } from "@/types/payloads/create-customer-dto.type";
 import { Card, DatePicker, TextInput } from "@tremor/react";
 import { Button } from "@tremor/react";
 import { FormikProps } from "formik";

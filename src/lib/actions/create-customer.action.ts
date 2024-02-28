@@ -1,7 +1,7 @@
 "use server";
 
-import { ServerError } from "@/types/misc/error.type";
-import { CreateCustomerPayload } from "@/types/payloads/create-customer-payload";
+import { ServerError } from "@/types/misc/server-error.type";
+import { CreateCustomerPayload } from "@/types/payloads/create-customer-dto.type";
 
 export async function createCustomer(
   _payload: CreateCustomerPayload,

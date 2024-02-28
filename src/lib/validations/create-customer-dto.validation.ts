@@ -1,6 +1,6 @@
 import { object, string } from "yup";
 
-export const CreateCustomerPayloadSchema = object({
+export const CreateCustomerDtoSchema = object({
   firstName: string().required("El nombre es requerido."),
   lastName: string().required("El apellido es requerido."),
   address: string().required("La dirección es requerida."),
@@ -13,6 +13,6 @@ export const CreateCustomerPayloadSchema = object({
     .required("El correo electrónico es requerido."),
 });
 
-export function validateCreateCustomerPayload(obj: object) {
-  return CreateCustomerPayloadSchema.validateSync(obj);
+export function validateCreateDtoPayload(obj: object) {
+  return CreateCustomerDtoSchema.validateSync(obj);
 }

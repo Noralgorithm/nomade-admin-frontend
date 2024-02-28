@@ -1,10 +1,8 @@
 "use client";
 
 import { createCustomer } from "@/lib/actions/create-customer.action";
-import { CreateCustomerPayloadSchema } from "@/lib/validations/create-customer-payload.validation";
-import { CreateCustomerPayload } from "@/types/payloads/create-customer-payload";
-import { Card, DatePicker, TextInput } from "@tremor/react";
-import { Button } from "@tremor/react";
+import { CreateCustomerDtoSchema } from "@/lib/validations/create-customer-dto.validation";
+import { CreateCustomerPayload } from "@/types/payloads/create-customer-dto.type";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { CreateCustomerFormView } from "../../_components/customer-form-view";
@@ -21,7 +19,7 @@ export function CreateCustomerForm() {
       phoneNumber: "",
       email: "",
     },
-    validationSchema: CreateCustomerPayloadSchema,
+    validationSchema: CreateCustomerDtoSchema,
     onSubmit: async (values) => {
       const res = await createCustomer(values);
       if (res?.message) {

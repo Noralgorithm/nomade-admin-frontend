@@ -1,8 +1,8 @@
-import { LoginPayloadSchema } from "@/lib/validations/login-payload.validation";
+import { LoginDtoSchema } from "@/lib/validations/login-dto.validation";
 import { Button, TextInput } from "@tremor/react";
 import { useFormik } from "formik";
 import { login } from "@/lib/actions/login.action";
-import { LoginPayload } from "@/types/payloads/login-payload.type";
+import { LoginPayload } from "@/types/payloads/login-dto.type";
 import { toast } from "react-toastify";
 
 export function LoginForm() {
@@ -11,7 +11,7 @@ export function LoginForm() {
       email: "",
       password: "",
     },
-    validationSchema: LoginPayloadSchema,
+    validationSchema: LoginDtoSchema,
     onSubmit: async (values) => {
       const res = await login(values);
       if (res.message) {
