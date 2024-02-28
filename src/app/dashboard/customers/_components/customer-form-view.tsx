@@ -1,12 +1,12 @@
 "use client";
 
-import { CreateCustomerPayload } from "@/types/payloads/create-customer-dto.type";
+import { CreateCustomerDto } from "@/types/dto/create-customer-dto.type";
 import { Card, DatePicker, TextInput } from "@tremor/react";
 import { Button } from "@tremor/react";
 import { FormikProps } from "formik";
 
 interface Props {
-  formik: FormikProps<CreateCustomerPayload>;
+  formik: FormikProps<CreateCustomerDto>;
 }
 
 export function CreateCustomerFormView({ formik }: Props) {

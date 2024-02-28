@@ -1,6 +1,6 @@
 "use server";
 
-import { LoginPayload } from "@/types/payloads/login-dto.type";
+import { LoginDto } from "@/types/dto/login-dto.type";
 import { validateLoginDto } from "../validations/login-dto.validation";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
@@ -12,7 +12,7 @@ const users = [
   },
 ];
 
-export async function login(payload: LoginPayload) {
+export async function login(payload: LoginDto) {
   if (!validateLoginDto(payload)) {
     throw new Error("Invalid Login Payload.");
   }

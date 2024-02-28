@@ -2,13 +2,13 @@
 
 import { createCustomer } from "@/lib/actions/create-customer.action";
 import { CreateCustomerDtoSchema } from "@/lib/validations/create-customer-dto.validation";
-import { CreateCustomerPayload } from "@/types/payloads/create-customer-dto.type";
+import { CreateCustomerDto } from "@/types/dto/create-customer-dto.type";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { CreateCustomerFormView } from "../../_components/customer-form-view";
 
 export function CreateCustomerForm() {
-  const formik = useFormik<CreateCustomerPayload>({
+  const formik = useFormik<CreateCustomerDto>({
     initialValues: {
       firstName: "",
       lastName: "",

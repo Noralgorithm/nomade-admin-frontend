@@ -2,11 +2,11 @@ import { LoginDtoSchema } from "@/lib/validations/login-dto.validation";
 import { Button, TextInput } from "@tremor/react";
 import { useFormik } from "formik";
 import { login } from "@/lib/actions/login.action";
-import { LoginPayload } from "@/types/payloads/login-dto.type";
+import { LoginDto } from "@/types/dto/login-dto.type";
 import { toast } from "react-toastify";
 
 export function LoginForm() {
-  const formik = useFormik<LoginPayload>({
+  const formik = useFormik<LoginDto>({
     initialValues: {
       email: "",
       password: "",
