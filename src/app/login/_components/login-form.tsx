@@ -1,7 +1,7 @@
-import { LoginDtoSchema } from "@/lib/validations/login-dto.validation";
+import { LoginDtoSchema } from "@/validations/login-dto.validation";
 import { Button, TextInput } from "@tremor/react";
 import { useFormik } from "formik";
-import { login } from "@/lib/actions/login.action";
+import { login } from "@/actions/login.action";
 import { LoginDto } from "@/types/dto/login-dto.type";
 import { toast } from "react-toastify";
 

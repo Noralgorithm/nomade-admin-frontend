@@ -1,7 +1,7 @@
 "use client";
 
-import { createCustomer } from "@/lib/actions/create-customer.action";
-import { CreateCustomerDtoSchema } from "@/lib/validations/create-customer-dto.validation";
+import { createCustomer } from "@/actions/create-customer.action";
+import { CreateCustomerDtoSchema } from "@/validations/create-customer-dto.validation";
 import { CreateCustomerDto } from "@/types/dto/create-customer-dto.type";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
