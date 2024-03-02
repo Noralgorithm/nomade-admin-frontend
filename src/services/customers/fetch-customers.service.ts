@@ -8,7 +8,7 @@ import { HttpStatusCode } from "axios";
 export async function fetchCustomersService({
   page,
   perPage,
-}: PaginationParamsDto): Promise<Customer[]> {
+}: PaginationParamsDto): Promise<PaginatedItemsDto<Customer>> {
   const res = await axiosInstance.get<
     BackendResponseDto<PaginatedItemsDto<Customer>>
   >("/customers", {
@@ -19,5 +19,5 @@ export async function fetchCustomersService({
     validateStatus: (status) => status === HttpStatusCode.Ok,
   });
 
-  return res.data?.data?.items;
+  return res.data.data;
 }

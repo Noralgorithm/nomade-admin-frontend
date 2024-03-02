@@ -5,7 +5,7 @@ import { CreateCustomerDtoSchema } from "@/validations/create-customer-dto.valid
 import { CreateCustomerDto } from "@/types/dto/create-customer-dto.type";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
-import { CreateCustomerFormView } from "../../_components/customer-form-view";
+import { CreateCustomerFormView } from "./customer-form-view";
 import { useRouter } from "next/navigation";
 
 export function CreateCustomerForm() {
