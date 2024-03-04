@@ -3,6 +3,8 @@
 import { deleteCustomer } from "@/actions/customers/delete-customer.action";
 import { ConfirmDeleteDialogWithButton } from "@/components/confirm-delete-dialog-with-button";
 import { Table } from "@/components/table/table";
+import { useEditFormModalContext } from "@/contexts/edit-form-modal.context";
+import { EditCustomerDto } from "@/types/dto/customers/edit-customer.dto.type";
 import { Customer } from "@/types/entities/customer.type";
 import { Button } from "@mui/material";
 import { GridColDef } from "@mui/x-data-grid";
@@ -19,6 +21,7 @@ const ACTIONS_ICONS_SIZE = 30;
 
 export function CustomersTableView({ customers, customersCount }: Props) {
   const router = useRouter();
+  const { openModal } = useEditFormModalContext<EditCustomerDto>();
 
   async function handleDeleteCustomer(id: string) {
     const res = await deleteCustomer(id);
@@ -28,6 +31,10 @@ export function CustomersTableView({ customers, customersCount }: Props) {
       toast.success("Cliente eliminado con éxito.");
       router.refresh();
     }
+  }
+
+  async function handleEditCustomer(id: string, values: EditCustomerDto) {
+    openModal(id, values);
   }
 
   const columns: GridColDef<Customer>[] = [
@@ -46,7 +53,7 @@ export function CustomersTableView({ customers, customersCount }: Props) {
       width: 130,
       renderCell: (params) => (
         <div className="flex items-center justify-center w-full">
-          <Button>
+          <Button onClick={() => handleEditCustomer(params.row.id, params.row)}>
             <MdEdit size={ACTIONS_ICONS_SIZE} />
           </Button>
           <ConfirmDeleteDialogWithButton

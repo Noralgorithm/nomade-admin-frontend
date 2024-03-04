@@ -13,6 +13,6 @@ export const CreateCustomerDtoSchema = object({
     .required("El correo electrónico es requerido."),
 });
 
-export function validateCreateDtoPayload(obj: object) {
+export function validateCreateCustomerDto(obj: object) {
   return CreateCustomerDtoSchema.validateSync(obj);
 }

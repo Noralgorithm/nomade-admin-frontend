@@ -48,7 +48,9 @@ export function Sidebar() {
         </MenuItem>
         <MenuItem icon={<TiUser size={ICONS_SIZE} />}>Empleados</MenuItem>
         <SubMenu label="Servicios" icon={<TiTag size={ICONS_SIZE} />}>
-          <MenuItem>Hotel por noches</MenuItem>
+          <MenuItem component={<Link href="hotels-per-night" />}>
+            Hotel por noches
+          </MenuItem>
           <MenuItem>Alquiler de autos</MenuItem>
           <MenuItem>Pasaje de colectivo</MenuItem>
           <MenuItem>Pasaje de avión</MenuItem>

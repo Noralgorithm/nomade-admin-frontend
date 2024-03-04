@@ -1,7 +1,7 @@
 "use server";
 
 import { ServerError } from "@/types/misc/server-error.type";
-import { CreateCustomerDto } from "@/types/dto/create-customer-dto.type";
+import { CreateCustomerDto } from "@/types/dto/customers/create-customer.dto.type";
 import { createCustomerService } from "@/services/customers/create-customer.service";
 
 export async function createCustomer(

@@ -1,6 +1,6 @@
 import { axiosInstance } from "@/config/axios";
 import { BackendResponseDto } from "@/types/dto/backend-response.dto.type";
-import { CreateCustomerDto } from "@/types/dto/create-customer-dto.type";
+import { CreateCustomerDto } from "@/types/dto/customers/create-customer.dto.type";
 import { Customer } from "@/types/entities/customer.type";
 import { HttpStatusCode } from "axios";
 
