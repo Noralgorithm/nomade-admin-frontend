@@ -1,6 +1,7 @@
 "use client";
 
 import { CreateCustomerDto } from "@/types/dto/customers/create-customer.dto.type";
+import { EditCustomerDto } from "@/types/dto/customers/edit-customer.dto.type";
 import {
   Button,
   DatePicker,
@@ -11,7 +12,7 @@ import {
 import { FormikProps } from "formik";
 
 interface Props {
-  formik: FormikProps<CreateCustomerDto>;
+  formik: FormikProps<CreateCustomerDto | EditCustomerDto>;
   isOpen: boolean;
   closeModal: () => void;
 }

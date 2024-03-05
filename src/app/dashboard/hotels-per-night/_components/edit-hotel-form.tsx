@@ -3,23 +3,23 @@
 import { CreateCustomerDtoSchema } from "@/validations/customers/create-customer-dto.validation";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
-import { CustomerFormView } from "./customer-form-view";
+import { HotelFormView } from "./hotel-form-view";
 import { useRouter } from "next/navigation";
 import { useEditFormModalContext } from "@/contexts/edit-form-modal.context";
-import { EditCustomerDto } from "@/types/dto/customers/edit-customer.dto.type";
-import { editCustomer } from "@/actions/customers/edit-customer.action";
+import { EditHotelPerNightDto } from "@/types/dto/hotels-per-night/edit-hotel.dto.type";
+import { editHotelPerNight } from "@/actions/hotels-per-night/edit-hotel-per-night.action";
 
-export function EditCustomerForm() {
+export function EditHotelForm() {
   const router = useRouter();
   const { isOpen, closeModal, initialValues, id } =
-    useEditFormModalContext<EditCustomerDto>();
+    useEditFormModalContext<EditHotelPerNightDto>();
 
-  const formik = useFormik<EditCustomerDto>({
+  const formik = useFormik<EditHotelPerNightDto>({
     enableReinitialize: true,
     initialValues,
     validationSchema: CreateCustomerDtoSchema,
     onSubmit: async (values) => {
-      const res = await editCustomer(id, values);
+      const res = await editHotelPerNight(id, values);
 
       if (res?.message) {
         toast.error(res.message);
@@ -31,6 +31,6 @@ export function EditCustomerForm() {
   });
 
   return (
-    <CustomerFormView formik={formik} isOpen={isOpen} closeModal={closeModal} />
+    <HotelFormView formik={formik} isOpen={isOpen} closeModal={closeModal} />
   );
 }

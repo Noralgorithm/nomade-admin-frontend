@@ -2,6 +2,7 @@
 
 import { useCreateFormModalContext } from "@/contexts/create-form-modal.context";
 import { CreateHotelPerNightDto } from "@/types/dto/hotels-per-night/create-hotel.dto.type";
+import { EditHotelPerNightDto } from "@/types/dto/hotels-per-night/edit-hotel.dto.type";
 import {
   Button,
   DatePicker,
@@ -13,12 +14,12 @@ import {
 import { FormikProps } from "formik";
 
 interface Props {
-  formik: FormikProps<CreateHotelPerNightDto>;
+  formik: FormikProps<CreateHotelPerNightDto | EditHotelPerNightDto>;
+  isOpen: boolean;
+  closeModal: () => void;
 }
 
-export function CreateHotelFormView({ formik }: Props) {
-  const { isOpen, closeModal } = useCreateFormModalContext();
-
+export function HotelFormView({ formik, isOpen, closeModal }: Props) {
   return (
     <>
       <Dialog
