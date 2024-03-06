@@ -1,6 +1,6 @@
 "use client";
 
-import { CreateCustomerDtoSchema } from "@/validations/customers/create-customer-dto.validation";
+import { createHotelPerNightDtoSchema } from "@/validations/hotels-per-night/create-hotel-per-night.validation";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { HotelFormView } from "./hotel-form-view";
@@ -17,7 +17,7 @@ export function EditHotelForm() {
   const formik = useFormik<EditHotelPerNightDto>({
     enableReinitialize: true,
     initialValues,
-    validationSchema: CreateCustomerDtoSchema,
+    validationSchema: createHotelPerNightDtoSchema,
     onSubmit: async (values) => {
       const res = await editHotelPerNight(id, values);
 

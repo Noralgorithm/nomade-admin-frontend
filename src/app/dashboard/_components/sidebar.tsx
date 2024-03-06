@@ -48,7 +48,7 @@ export function Sidebar() {
         </MenuItem>
         <MenuItem icon={<TiUser size={ICONS_SIZE} />}>Empleados</MenuItem>
         <SubMenu label="Servicios" icon={<TiTag size={ICONS_SIZE} />}>
-          <MenuItem component={<Link href="hotels-per-night" />}>
+          <MenuItem component={<Link href="/dashboard/hotels-per-night" />}>
             Hotel por noches
           </MenuItem>
           <MenuItem>Alquiler de autos</MenuItem>
@@ -58,7 +58,12 @@ export function Sidebar() {
           <MenuItem>Excursión</MenuItem>
           <MenuItem>Entrada a evento</MenuItem>
         </SubMenu>
-        <MenuItem icon={<TiTags size={ICONS_SIZE} />}>Paquetes</MenuItem>
+        <MenuItem
+          component={<Link href="/dashboard/packages" />}
+          icon={<TiTags size={ICONS_SIZE} />}
+        >
+          Paquetes
+        </MenuItem>
       </Menu>
     </RPSidebar>
   );

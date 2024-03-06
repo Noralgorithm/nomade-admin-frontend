@@ -1,7 +1,7 @@
 "use client";
 
 import { createCustomer } from "@/actions/customers/create-customer.action";
-import { CreateCustomerDtoSchema } from "@/validations/customers/create-customer-dto.validation";
+import { createCustomerDtoSchema } from "@/validations/customers/create-customer-dto.validation";
 import { CreateCustomerDto } from "@/types/dto/customers/create-customer.dto.type";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
@@ -24,7 +24,7 @@ export function CreateCustomerForm() {
       phoneNumber: "",
       email: "",
     },
-    validationSchema: CreateCustomerDtoSchema,
+    validationSchema: createCustomerDtoSchema,
     onSubmit: async (values) => {
       const res = await createCustomer(values);
 

@@ -1,6 +1,5 @@
 "use client";
 
-import { useCreateFormModalContext } from "@/contexts/create-form-modal.context";
 import { CreateHotelPerNightDto } from "@/types/dto/hotels-per-night/create-hotel.dto.type";
 import { EditHotelPerNightDto } from "@/types/dto/hotels-per-night/edit-hotel.dto.type";
 import {
@@ -104,7 +103,7 @@ export function HotelFormView({ formik, isOpen, closeModal }: Props) {
                     formik.setFieldValue("serviceTimestamp", v)
                   }
                   inputMode="text"
-                  defaultValue={formik.values.serviceTimestamp}
+                  defaultValue={new Date(formik.values.serviceTimestamp)}
                   enableYearNavigation
                   placeholder="Selecciona una fecha"
                   className="font-normal text-base"
@@ -118,7 +117,7 @@ export function HotelFormView({ formik, isOpen, closeModal }: Props) {
                   onValueChange={(v) =>
                     formik.setFieldValue("checkoutTimestamp", v)
                   }
-                  defaultValue={formik.values.checkoutTimestamp}
+                  defaultValue={new Date(formik.values.checkoutTimestamp)}
                   className="font-normal text-base"
                 />
               </label>

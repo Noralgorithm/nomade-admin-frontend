@@ -1,6 +1,6 @@
 "use client";
 
-import { CreateCustomerDtoSchema } from "@/validations/customers/create-customer-dto.validation";
+import { createCustomerDtoSchema } from "@/validations/customers/create-customer-dto.validation";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { CustomerFormView } from "./customer-form-view";
@@ -17,7 +17,7 @@ export function EditCustomerForm() {
   const formik = useFormik<EditCustomerDto>({
     enableReinitialize: true,
     initialValues,
-    validationSchema: CreateCustomerDtoSchema,
+    validationSchema: createCustomerDtoSchema,
     onSubmit: async (values) => {
       const res = await editCustomer(id, values);
 

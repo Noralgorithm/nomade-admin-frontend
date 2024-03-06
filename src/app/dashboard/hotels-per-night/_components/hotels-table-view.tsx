@@ -3,6 +3,8 @@
 import { deleteHotelPerNight } from "@/actions/hotels-per-night/delete-hotel-per-night.action";
 import { ConfirmDeleteDialogWithButton } from "@/components/confirm-delete-dialog-with-button";
 import { Table } from "@/components/table/table";
+import { useEditFormModalContext } from "@/contexts/edit-form-modal.context";
+import { EditHotelPerNightDto } from "@/types/dto/hotels-per-night/edit-hotel.dto.type";
 import { HotelPerNight } from "@/types/entities/hotel-per-night.type";
 import { Button } from "@mui/material";
 import { GridColDef } from "@mui/x-data-grid";
@@ -22,6 +24,7 @@ export function HotelsTableView({
   hotelsPerNightCount,
 }: Props) {
   const router = useRouter();
+  const { openModal } = useEditFormModalContext<EditHotelPerNightDto>();
 
   async function handleDeleteHotelPerNight(id: string) {
     const res = await deleteHotelPerNight(id);
@@ -59,7 +62,7 @@ export function HotelsTableView({
       width: 130,
       renderCell: (params) => (
         <div className="flex items-center justify-center w-full">
-          <Button>
+          <Button onClick={() => openModal(params.row.id, params.row)}>
             <MdEdit size={ACTIONS_ICONS_SIZE} />
           </Button>
           <ConfirmDeleteDialogWithButton

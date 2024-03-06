@@ -2,10 +2,10 @@
 
 import { CreateFormModalProvider } from "@/contexts/create-form-modal.context";
 import { ReactNode } from "react";
-import { CreateHotelForm } from "./_components/create-hotel-form";
+import { CreatePackageForm } from "./_components/create-package-form";
 import { EditFormModalProvider } from "@/contexts/edit-form-modal.context";
-import { EditHotelForm } from "./_components/edit-hotel-form";
-import { EditHotelPerNightDto } from "@/types/dto/hotels-per-night/edit-hotel.dto.type";
+import { EditCustomerForm } from "./_components/edit-package-form";
+import { EditPackageDto } from "@/types/dto/packages/edit-package.dto.type";
 
 interface Props {
   children: ReactNode;
@@ -14,11 +14,11 @@ interface Props {
 export default function CustomersLayout({ children }: Props) {
   return (
     <CreateFormModalProvider>
-      <EditFormModalProvider<EditHotelPerNightDto>>
+      <EditFormModalProvider<EditPackageDto>>
         {children}
-        <EditHotelForm />
+        <CreatePackageForm />
+        <EditCustomerForm />
       </EditFormModalProvider>
-      <CreateHotelForm />
     </CreateFormModalProvider>
   );
 }
